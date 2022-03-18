@@ -3,10 +3,10 @@ using System.IO;
 using System.Data;
 using Microsoft.Data.Sqlite;
 
-namespace ParserTask
+namespace DBworking
 {
     public static class RecordToDB
-    {        
+    {
         public static void InitializeDatabase() //Создаём базу и таблицу
         {
             try
@@ -27,7 +27,7 @@ namespace ParserTask
             }
             catch (Exception e)
             {
-                using (StreamWriter sw = new StreamWriter(Program.writePath))
+                using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath))
                 {
                     sw.WriteLine("Не удалось создать БД " + e.InnerException);
                     throw;
@@ -69,7 +69,7 @@ namespace ParserTask
             }
             catch (Exception e)
             {
-                using (StreamWriter sw = new StreamWriter(Program.writePath))
+                using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath))
                 {
                     sw.WriteLine("Не удалось записать данные в БД " + e.InnerException);
                     throw;

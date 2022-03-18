@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HtmlAgilityPack;
 
-namespace ParserTask
+namespace HTMLcontent
 {
     //использование abstract классов
     class GetHTMLcontent //получить содержимое веб-страницы
@@ -45,7 +45,7 @@ namespace ParserTask
 
         public static void Fatale(string message, Exception exception)
         {
-            using (StreamWriter sw = new StreamWriter(Program.writePath))
+            using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath))
             {
                 sw.WriteLine(message + exception.InnerException);
             }
