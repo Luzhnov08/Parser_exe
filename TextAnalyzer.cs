@@ -4,9 +4,9 @@ using System.Text;
 using System.Linq;
 using System.Data;
 
-namespace TextParsing
+namespace ParserTask
 {
-    class TextAnalyzer
+    public static class TextAnalyzer
     {
         public static DataTable AnalyzeText(string BigString) //расчет кол-ва уникальных слов
         {
@@ -23,7 +23,7 @@ namespace TextParsing
             }
             catch (Exception e)
             {
-                using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath))
+                using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath()))
                 {
                     sw.WriteLine("Не удалось разбить текст по заданным разделителям " + e.InnerException);
                     throw;

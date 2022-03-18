@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using HtmlAgilityPack;
 
-namespace HTMLcontent
+namespace ParserTask
 {
     //использование abstract классов
-    class GetHTMLcontent //получить содержимое веб-страницы
+    public static class GetHTMLcontent //получить содержимое веб-страницы
     {
         public static string GetHTMLtext(string url) //статический класс и метод экземпляр которого не нужно создавать
         {
@@ -45,7 +45,7 @@ namespace HTMLcontent
 
         public static void Fatale(string message, Exception exception)
         {
-            using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath))
+            using (StreamWriter sw = new StreamWriter(ParserTask.StartProgram.writePath()))
             {
                 sw.WriteLine(message + exception.InnerException);
             }

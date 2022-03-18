@@ -4,9 +4,12 @@ using System.Data;
 
 namespace ParserTask
 {    
-    public class StartProgram
+    public static class StartProgram
     {
-        public static string writePath = Path.Combine(Directory.GetCurrentDirectory(), "Logging.txt"); //вот такое логирование ошибок(
+        public static string writePath()
+        { 
+            return Path.Combine(Directory.GetCurrentDirectory(), "Logging.txt"); //вот такое логирование ошибок(
+        }
         public static void Main(string[] args)
         {
             string InnerText;
